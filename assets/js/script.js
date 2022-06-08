@@ -34,7 +34,7 @@ var createTask = function(taskText, timeID) {
         
     };
    
-  auditTask(timeID);
+  colorTask(timeID);
   savedTasks.push(task);
   //console.log(savedTasks);
   //taskR.remove();
@@ -101,24 +101,38 @@ createTask(feedVal,createId);
 //console.log(parentEl.parentElement);
 });
 
-var auditTask = function(taskEl) {
+var colorTask = function(taskEl) {
     // get date from task element
     var hour = $(taskEl)
       //.find("card")
       .attr("data-time");
-      console.log(hour);
+      //console.log(hour);
   
     // convert to moment object at 5:00pm
     //var time = moment(date, "L").set("hour", 17);
   
     // remove any old classes from element
     $(taskEl).removeClass("list-group-item-warning list-group-item-danger");
-  
+    console.log("in else if "+Math.abs(moment().diff(hour,"hours")));
     // apply new class if task is near/over due date
     if (moment().isAfter(hour)) {
       $(taskEl).addClass("list-group-item-danger");
     } else if (Math.abs(moment().diff(hour, "hours")) <= 2) {
+        
       $(taskEl).addClass("list-group-item-warning");
     }
   };
+
+  setInterval(function() {
+    $(".card .list-group-item").each(function() {
+      colorTask($(this));
+    });
+  }, 1800000);
+  
   loadTasks();
+  // color tasks once at the start
+  /*
+  $(".card").each(function() {
+    auditTask($(this));
+  });
+  */
