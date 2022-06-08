@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container">
+      <!-- Timeblocks go here -->
+      <div class="row text-center">
+        <div class="w-100 col-4 d-flex align-items-stretch">
+          <div class="card">
+            <h3>8AM</h3>
+          </div>
+        </div>
+        <div class="col-8 d-flex align-items-stretch">
+          <div class="card" id="card-eight">
+            <form class="w-70 form-control form-check-inline"> 
+            <input class ="form-control"type="text" id="form-eight"placeholder="Add Task"></input>
+            <button class= "btn btn-lg"type="button" id="eight">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  
+
+
+      <!-- Timeblocks go here -->
+      <div class="row text-center">
+        <div class="w-100 col-4 d-flex align-items-stretch">
+          <div class="card" >
+            <h3>9AM</h3>
+          </div>
+        </div>
+        <div class="col-8 d-flex align-items-stretch">
+          <div class="card" id="card-nine">
+            <form class="w-70 form-control form-check-inline"> 
+            <input class ="form-control"type="text" id="form-nine"placeholder="Add Task"></input>
+            <button class= "btn btn-lg"type="button" id="nine">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Timeblocks go here -->
+      <div class="row text-center">
+        <div class="w-100 col-4 d-flex align-items-stretch">
+          <div class="card">
+            <h3 id="10">10AM</h3>
+          </div>
+        </div>
+        <div class="col-8 d-flex align-items-stretch">
+          <div class="card" id="card-ten">
+            <form class="w-70 form-control form-check-inline"> 
+            <input class ="form-control"type="text" id="form-ten"placeholder="Add Task"></input>
+            <button class= "btn btn-lg"type="button" id="ten">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+       <!-- Timeblocks go here -->
+       <div class="row text-center">
+        <div class="w-100 col-4 d-flex align-items-stretch">
+          <div class="card">
+            <h3>11AM</h3>
+          </div>
+        </div>
+        <div class="col-8 d-flex align-items-stretch">
+          <div class="card" id="card-eleven">
+            <form class="w-70 form-control form-check-inline"> 
+            <input class ="form-control"type="text" id="form-eleven" placeholder="Add Task"></input>
+            <button class= "btn btn-lg"type="button" id="eleven">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeblocks go here -->
+      <div class="row text-center">
+        <div class="w-100 col-4 d-flex align-items-stretch">
+          <div class="card">
+            <h3>12PM</h3>
+          </div>
+        </div>
+        <div class="col-8 d-flex align-items-stretch">
+          <div class="card" id="card-twelve">
+            <form class="w-70 form-control form-check-inline"> 
+            <input class ="form-control"type="text" id="form-twelve" placeholder="Add Task"></input>
+            <button class= "btn btn-lg"type="button" id="twelve">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  
+
+    
+      <!-- Timeblocks go here -->
+      <div class="row text-center">
+        <div class="w-100 col-4 d-flex align-items-stretch">
+          <div class="card">
+            <h3>1PM</h3>
+          </div>
+        </div>
+        <div class="col-8 d-flex align-items-stretch">
+          <div class="card" id="card-one">
+            <form class="w-70 form-control form-check-inline"> 
+            <input class ="form-control"type="text" id="form-one" placeholder="Add Task"></input>
+            <button class= "btn btn-lg"type="button" id="one">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row text-center">
+        <div class="w-100 col-4 d-flex align-items-stretch">
+          <div class="card">
+            <h3>2PM</h3>
+          </div>
+        </div>
+        <div class="col-8 d-flex align-items-stretch">
+          <div class="card" id="card-two">
+            <form class="w-70 form-control form-check-inline"> 
+            <input class ="form-control"type="text" id= "form-two"placeholder="Add Task"></input>
+            <button class= "btn btn-lg"type="button" id="two">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row text-center">
+        <div class="w-100 col-4 d-flex align-items-stretch">
+          <div class="card">
+            <h3>3PM</h3>
+          </div>
+        </div>
+        <div class="col-8 d-flex align-items-stretch">
+          <div class="card" id="card-three">
+            <form class="w-70 form-control form-check-inline"> 
+            <input class ="form-control"type="text" id="form-three" placeholder="Add Task"></input>
+            <button class= "btn btn-lg"type="button" id="three">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+     <div class="row text-center">
+        <div class="w-100 col-4 d-flex align-items-stretch">
+          <div class="card">
+            <h3>4PM</h3>
+          </div>
+        </div>
+        <div class="col-8 d-flex align-items-stretch">
+          <div class="card" id="card-four">
+            <form class="w-70 form-control form-check-inline"> 
+            <input class ="form-control" id="form-four" type="text" placeholder="Add Task"></input>
+            <button class= "btn btn-lg"type="button" id="four">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="w-100 col-4 d-flex align-items-stretch">
+          <div class="card">
+            <h3>5PM</h3>
+          </div>
+        </div>
+        <div class="col-8 d-flex align-items-stretch">
+          <div class="card" id="5">
+            <form class="w-70 form-control form-check-inline"> 
+            <input class ="form-control"type="text"  id="form-five"placeholder="Add Task"></input>
+            <button class= "btn btn-lg"type="button" id="five">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
