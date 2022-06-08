@@ -105,7 +105,7 @@ var colorTask = function(taskEl) {
     // apply new class if task is near/over due date
     if (hourInt<currentHour) {
       $(taskEl).addClass("list-group-item-danger");
-    } else if (diff <= 2 && diff>0) {
+    } else if (diff <= 2 && diff>=0) {
       $(taskEl).addClass("list-group-item-warning");
     }
     else{
