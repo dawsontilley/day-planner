@@ -6,17 +6,19 @@ var m= String(dateToday.getMonth())
 var y=String(dateToday.getFullYear());
 var today=d+"/"+m+"/"+y;
 var hour=String(dateToday.getHours());
-//console.log(today);
+//console.log(hour);
 var todayEl=$("#currentDay").text(today);
 
-console.log(todayEl);
+//console.log(todayEl);
 
 var savedTasks =[];
 // recieve input
-var createTask = function(taskText, timeID,taskR) {
+var createTask = function(taskText, timeID) {
     // create elements that make up a task item
+    var toDeleteS =$("form-"+timeID);
+    console.log(toDeleteS);
     var toAdd = $(timeID);
-    console.log(toAdd);
+    //console.log(toAdd);
     var taskH4 = $("<p></p>").text(taskText);
     var txt2 = $("<p></p>").text("Text.").addClass("card");
     var myTask = document.createElement("p");
@@ -29,14 +31,16 @@ var createTask = function(taskText, timeID,taskR) {
     task={
         text:taskText,
         id:timeID,
-        remove:taskR,
-    }
+        
+    };
    
-    console.log("remove"+task.remove);
+    
 
   savedTasks.push(task);
+  //console.log(savedTasks);
   //taskR.remove();
   saveTasks();
+  //$(toDeleteS).remove();
     // append to ul list on the page
     //$("#list-" + taskList).append(taskLi);
   };
@@ -47,7 +51,8 @@ var createTask = function(taskText, timeID,taskR) {
 
   var loadTasks = function() {
     tasks = JSON.parse(localStorage.getItem("tasks"));
-  
+    console.log("in load");
+    console.log(tasks);
     // if nothing in localStorage, create a new object to track all task status arrays
     if (!tasks) {
        console.log("no tasks");
@@ -55,29 +60,39 @@ var createTask = function(taskText, timeID,taskR) {
        
       };
     
-    
-  
+    //for (let i=0)
+    for (var i=0;i<tasks.length;i++){
+        console.log(tasks[i]);
+        if (!tasks[i].text){
+            break;
+        }
+        else {
+            
+            createTask(tasks[i].text,tasks[i].id);
+        }
+    }
     // loop over object properties
-    $.each(tasks, function(list, arr) {
+    /*$.each(tasks, function(list, arr) {
+        if(tasks)
       // then loop over sub-array
         console.log(tasks.text);
         createTask(tasks.text, tasks.id,tasks.remove);
       
-    });
+    });*/
   };
   
 $(".card").on("click","button",function() {
-var toRemove=this.parentElement;
-var removeID=this.parentElement.id;
-console.log("remove idcheck "+removeID);
+    event.preventDefault;
+
+
 var formId="#form-"+this.id;
 createId="#card-"+this.id;
 
 console.log(formId);
 var feedVal= $(formId)[0].value;
-createTask(feedVal,createId,toRemove);
-event.preventDefault;
-console.log(toRemove);
+createTask(feedVal,createId);
+
+
 
 //createTask()
 //console.log(parent);
@@ -90,7 +105,7 @@ var auditTask = function(taskEl) {
     // get date from task element
     var date = $(taskEl)
       .find("card")
-      .id();
+      .attr("data-time");
       console.log(date);
   
     // convert to moment object at 5:00pm
