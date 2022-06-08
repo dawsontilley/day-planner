@@ -9,3 +9,4 @@ Plan your work day ! This will help you plan your day by adding tasks and showin
 ### Author
 JS by Dawson, Others from U of T SCS Template.
 
+![site](./assets/img/website.PNG)
