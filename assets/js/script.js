@@ -5,7 +5,7 @@ var d = String(dateToday.getDate());
 var m= String(dateToday.getMonth())
 var y=String(dateToday.getFullYear());
 var today=d+"/"+m+"/"+y;
-var hour=String(dateToday.getHours());
+//var hour=String(dateToday.getHours());
 //console.log(hour);
 var todayEl=$("#currentDay").text(today);
 
@@ -15,12 +15,12 @@ var savedTasks =[];
 // recieve input
 var createTask = function(taskText, timeID) {
     // create elements that make up a task item
-    var toDeleteS =$("form-"+timeID);
+    var toDeleteS =$(timeID).find("form");
     console.log(toDeleteS);
     var toAdd = $(timeID);
     //console.log(toAdd);
     var taskH4 = $("<p></p>").text(taskText);
-    var txt2 = $("<p></p>").text("Text.").addClass("card");
+    //var txt2 = $("<p></p>").text("Text.").addClass("card");
     var myTask = document.createElement("p");
     myTask.innerHTML = taskText;  
    
@@ -34,11 +34,11 @@ var createTask = function(taskText, timeID) {
         
     };
    
-    
-
+  auditTask(timeID);
   savedTasks.push(task);
   //console.log(savedTasks);
   //taskR.remove();
+  toDeleteS.remove();
   saveTasks();
   //$(toDeleteS).remove();
     // append to ul list on the page
@@ -51,11 +51,11 @@ var createTask = function(taskText, timeID) {
 
   var loadTasks = function() {
     tasks = JSON.parse(localStorage.getItem("tasks"));
-    console.log("in load");
-    console.log(tasks);
+    //console.log("in load");
+    //console.log(tasks);
     // if nothing in localStorage, create a new object to track all task status arrays
     if (!tasks) {
-       console.log("no tasks");
+       //console.log("no tasks");
        return;
        
       };
@@ -86,9 +86,9 @@ $(".card").on("click","button",function() {
 
 
 var formId="#form-"+this.id;
-createId="#card-"+this.id;
+var createId="#card-"+this.id;
 
-console.log(formId);
+//console.log(formId);
 var feedVal= $(formId)[0].value;
 createTask(feedVal,createId);
 
@@ -103,10 +103,10 @@ createTask(feedVal,createId);
 
 var auditTask = function(taskEl) {
     // get date from task element
-    var date = $(taskEl)
-      .find("card")
+    var hour = $(taskEl)
+      //.find("card")
       .attr("data-time");
-      console.log(date);
+      console.log(hour);
   
     // convert to moment object at 5:00pm
     //var time = moment(date, "L").set("hour", 17);
