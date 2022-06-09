@@ -6,6 +6,9 @@ Plan your work day ! This will help you plan your day by adding tasks and showin
 * CSS
 * JS
 
+### Deployed at
+https://dawsontilley.github.io/js_quiz/
+
 ### Author
 JS by Dawson, Others from U of T SCS Template.
 
